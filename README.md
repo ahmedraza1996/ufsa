@@ -88,8 +88,18 @@ python run.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss
 ``` python
 python run.py --use_cuda --dataset 50salads  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll --pretrained_model /path to model/
 ```
+### YTI
 
-Note that for this stage you need to specify the pretrained model from the first stage via the `--pretrained_model` flag.
+<strong>Training script for stage 1:</strong>
+``` python
+python run_yti.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss  
+```
+
+<strong>Training script for stage 2:</strong>
+``` python
+python run_yti.py --use_cuda --dataset 50salads  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll 
+```
+Specify path to stage1 model for each action inside the loop via the `--pretrained_model` flag.
 
 
 ## Evaluation
