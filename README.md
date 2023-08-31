@@ -23,8 +23,8 @@ Install the required libaries as follows:
 
 ``` python
 conda clean -a -y
-conda create -n uvast python=3.9.7 numpy
-conda activate uvast
+conda create -n ufsa python=3.9.7 numpy
+conda activate ufsa
 conda install  --insecure pytorch=1.10.0 torchvision=0.11.1 torchaudio=0.10.0 cudatoolkit=11.3.1  -c pytorch
 python -c "import torch; print(torch.__version__)"
 conda install -c conda-forge tqdm
@@ -73,7 +73,7 @@ For each dataset create separate folder (specify path --data_root) where the inn
 ## Training
 We train the model in a two stages process:
 In the first stage, we train the encoder using fixed order temporal optimal transport.
-In the second stage, we train encoder+ transcript decoder along with cross attention loss for alignment. 
+In the second stage, we train encoder+ transcript decoder along with cross-attention loss for alignment. 
 
 All training scrips for all three datasets are provided with the [pretrained_models](pretrained_models). For each of the scripts you need to specify the `--data_root`. 
 For more information regarding the flags, please look into  the information for each flag in `run.py`.
@@ -86,7 +86,7 @@ python run.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss
 
 <strong>Training script for stage 2:</strong>
 ``` python
-python run.py --use_cuda --dataset 50salads  --use_pe_tgt --do_segwise_loss --do_crossattention_action_loss_nll --pretrained_model /path to model/
+python run.py --use_cuda --dataset 50salads  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll --pretrained_model /path to model/
 ```
 
 Note that for this stage you need to specify the pretrained model from the first stage via the `--pretrained_model` flag.
