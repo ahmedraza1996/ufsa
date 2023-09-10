@@ -11,7 +11,7 @@ Details regarding the required environment, datasets, training scripts and pretr
    <br />
 
 
-## Enviroment
+## Installation
 Pytorch == `1.10.0+cu102`, 
 torchvision == `0.11.1`, 
 python == `3.9.7`, 
