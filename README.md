@@ -62,7 +62,7 @@ We train the model in a two stages process:
 In the first stage, we train the encoder using fixed order temporal optimal transport.
 In the second stage, we train encoder+ transcript decoder along with cross-attention loss for alignment. 
 
-All training scrips for all three datasets are provided with the [pretrained_models](pretrained_models). For each of the scripts you need to specify the `--data_root`. 
+All training scrips for all datasets are provided with the [pretrained_models](pretrained_models). For each of the scripts you need to specify the `--data_root`. 
 For more information regarding the flags, please look into  the information for each flag in `run.py`.
 
 #### 50 Salads
@@ -86,7 +86,7 @@ python run_yti.py --use_cuda  --dataset yti   --do_framewise_loss_gauss
 ``` python
 python run_yti.py --use_cuda --dataset yti  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll 
 ```
-Specify path to stage1 model for each action inside the loop via the `--pretrained_model` flag.
+Specify path to stage 1 model for each action inside the loop via the `--pretrained_model` flag.
 
 
 ## Testing
