@@ -3,7 +3,6 @@
 For our recent works, please check out our research page (https://retrocausal.ai/research/).
 
 ## Overview
-
 This repository implements UFSA, an unsupervised permutation-aware method for temporal action segmentation.
 Details regarding the required environment, datasets, training scripts and pretrained models can be found below.
 
@@ -14,7 +13,7 @@ torchvision == `0.11.1`,
 python == `3.9.7`, 
 CUDA==`10.2`
 
-### Enviroment Setup
+#### Enviroment Setup
 Install the required libaries as follows:
 
 ``` python
@@ -34,7 +33,7 @@ conda install ipython
 conda install pip
 ```
 
-### Folders
+#### Folders
 For each dataset create separate folder (specify path --data_root) where the inner folders structure is as following:
 
 > features/  
@@ -45,21 +44,21 @@ For each dataset create separate folder (specify path --data_root) where the inn
 
 ## Datasets
 
-### 50 Salads
+#### 50 Salads
 - 50Salads features [link](https://drive.google.com/open?id=17o0WfF970cVnazrRuOWE92-OiYHEXTT3)
 - 50Salads ground truth [link](https://drive.google.com/open?id=1mzcN9pz1tKygklQOiWI7iEvcJ1vJfU3R)
 
-### YouTube Instructions
+#### YouTube Instructions
 
 - YouTube Instructions features [link](https://drive.google.com/open?id=1HyF3_bwWgz1QNgzLvN4J66TJVsQTYFTa) 
 - YouTube Instructions ground truth [link](https://drive.google.com/open?id=1ENgdHvwHj2vFwflVXosCkCVP9mfLL5lP)
 
-### Breakfast
+#### Breakfast
 
 - Breakfast features [link](https://drive.google.com/file/d/1DbYnU2GBb68CxEt2I50QZm17KGYKNR1L)
 - Breakfast ground truth [link](https://drive.google.com/file/d/1RO8lrvLy4bVaxZ7C62R0jVQtclXibLXU)
 
-### Desktop Assembly 
+#### Desktop Assembly 
 
 - Desktop Assembly features [link](https://drive.google.com/drive/folders/1t-dUAcY4QMbGt6xHEGriOMgSl5TRBXFM?usp=drive_link)
 - Desktop Assembly ground truth [link](https://drive.google.com/drive/folders/1Ql3PwcR24hgjxzCX4XGvcQfVlhekqZu1?usp=drive_link)
@@ -73,7 +72,7 @@ In the second stage, we train encoder+ transcript decoder along with cross-atten
 All training scrips for all three datasets are provided with the [pretrained_models](pretrained_models). For each of the scripts you need to specify the `--data_root`. 
 For more information regarding the flags, please look into  the information for each flag in `run.py`.
 
-### 50 Salads
+#### 50 Salads
 
 <strong>Training script for stage 1:</strong>
 ``` python
@@ -84,7 +83,7 @@ python run.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss
 ``` python
 python run.py --use_cuda --dataset 50salads  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll --pretrained_model /path to model/
 ```
-### YTI
+#### YTI
 
 <strong>Training script for stage 1:</strong>
 ``` python
