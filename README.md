@@ -107,5 +107,3 @@ An example script for testing a model is provided below:
 ``` python
 python run.py --use_cuda --dataset 50salads --path_inference_model /path to model  --inference_only  --use_pe_tgt --use_transcript_dec 
 ```            
-part of the publication cited above. It will neither be
-maintained nor monitored in any way.
