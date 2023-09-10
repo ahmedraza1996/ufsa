@@ -93,6 +93,7 @@ Specify path to stage 1 model for each action inside the loop via the `--pretrai
 To run the inference code the flag `--inference_only` needs to be added as well as `--path_inference_model` to point to the model to be evaluated.
 An example script for testing a model is provided below:
 
+#### 50 Salads
 <strong>Testing script for stage 2:</strong>
 ``` python
 python run.py --use_cuda --dataset 50salads --path_inference_model /path to model  --inference_only  --use_pe_tgt --use_transcript_dec 
