@@ -70,7 +70,6 @@ All training scrips for all three datasets are provided with the [pretrained_mod
 For more information regarding the flags, please look into  the information for each flag in `run.py`.
 
 #### 50 Salads
-
 <strong>Training script for stage 1:</strong>
 ``` python
 python run.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss  
@@ -80,8 +79,8 @@ python run.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss
 ``` python
 python run.py --use_cuda --dataset 50salads  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll --pretrained_model /path to model/
 ```
-#### YouTube Instructions
 
+#### YouTube Instructions
 <strong>Training script for stage 1:</strong>
 ``` python
 python run_yti.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss  
