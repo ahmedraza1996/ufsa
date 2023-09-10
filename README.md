@@ -1,10 +1,8 @@
 # Permutation-Aware Activity Segmentation via Unsupervised Frame-to-Segment Alignment
 
-For our recent works, please check out our research page (https://retrocausal.ai/research/).
-
 ## Overview
 This repository implements UFSA, an unsupervised permutation-aware method for temporal action segmentation.
-Details regarding the required environment, datasets, training scripts and pretrained models can be found below.
+Details regarding installation, datasets, training, and testing can be found below.
 
 
 ## Installation
@@ -15,7 +13,6 @@ CUDA==`10.2`
 
 #### Enviroment Setup
 Install the required libaries as follows:
-
 ``` python
 conda clean -a -y
 conda create -n ufsa python=3.9.7 numpy
@@ -35,7 +32,6 @@ conda install pip
 
 #### Folders
 For each dataset create separate folder (specify path --data_root) where the inner folders structure is as following:
-
 > features/  
 > groundTruth/  
 > mapping/  
@@ -83,22 +79,21 @@ python run.py --use_cuda --dataset 50salads  --use_pe_tgt  --do_framewise_loss_g
 #### YouTube Instructions
 <strong>Training script for stage 1:</strong>
 ``` python
-python run_yti.py --use_cuda  --dataset 50salads   --do_framewise_loss_gauss  
+python run_yti.py --use_cuda  --dataset yti   --do_framewise_loss_gauss  
 ```
 
 <strong>Training script for stage 2:</strong>
 ``` python
-python run_yti.py --use_cuda --dataset 50salads  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll 
+python run_yti.py --use_cuda --dataset yti  --use_pe_tgt  --do_framewise_loss_gauss --do_segwise_loss --do_crossattention_action_loss_nll 
 ```
 Specify path to stage1 model for each action inside the loop via the `--pretrained_model` flag.
 
 
 ## Testing
 To run the inference code the flag `--inference_only` needs to be added as well as `--path_inference_model` to point to the model to be evaluated.
-
 An example script for testing a model is provided below:
 
-<strong>Evaluate Stage 2:</strong>
+<strong>Testing script for stage 2:</strong>
 ``` python
 python run.py --use_cuda --dataset 50salads --path_inference_model /path to model  --inference_only  --use_pe_tgt --use_transcript_dec 
-```            
+```
