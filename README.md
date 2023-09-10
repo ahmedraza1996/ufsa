@@ -39,7 +39,7 @@ conda install pip
 
 
 
-#### Folders
+### Folders
 For each dataset create separate folder (specify path --data_root) where the inner folders structure is as following:
 
 > features/  
