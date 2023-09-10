@@ -1,5 +1,4 @@
-# Permutation-Aware Activity Segmentation via Unsupervised Frame-to-Segment
-Alignment
+# Permutation-Aware Activity Segmentation via Unsupervised Frame-to-Segment Alignment
 
 For our recent works, please check out our research page (https://retrocausal.ai/research/).
 
